@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitwise</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="styles/master.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="row main-header">
+        <div class="col-md-12 col-sm-12">
+          Splitwise
+        </div>
+      </header>
+      <section class = "row">
+        <div class="col-md-4 col-sm-12" id = "friend-list">
+          <div class="row">
+            <div class="col-sm-12 title">
+              <span>Friends</span>
+              <span class = "inline-action" data-toggle="modal" data-target="#friend-modal"> + Add friend</span>
+            </div>
+            <div class="col-sm-12 title">
+              <input type="text" name="" value="" id = "friend-search" placeholder="Find a friend">
+            </div>
+            <div id="friends" class="col-sm-12">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-12" id = "expenses">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 title">
+              <span>Dashboard</span>
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#expense-modal">Add Bill</button>
+              <input type="text" name="" value="" placeholder="Search Expense" id = "search">
+            </div>
+            <div class="metrics col-md-12 col-sm-12">
+              <div class="row">
+                <div class="col-md-4 col-sm-4">
+                  <span>Total Balance</span>
+                  <span> -- </span>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                  <span>You owe</span>
+                  <span> -- </span>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                  <span>You are owed</span>
+                  <span> -- </span>
+                </div>
+              </div>
+            </div>
+            <div class="metrics-details col-md-12 col-sm-12">
+              <div class="row" id = "expenses-container">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Friend Modal -->
+      <div id="friend-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">New Friend</h5>
+              <span class="close" data-dismiss="modal">&times;</span>
+            </div>
+            <div class="modal-body">
+              <div class="form-div">
+                <label for="" class = "col-md-4">Name:</label>
+                <input type="text" class = "col-md-4" name="" value="" id = "friend-name">
+              </div>
+              <div class="form-div">
+                <label for="" class = "col-md-4">Email</label>
+                <input type="email" class = "col-md-4" name="" value="" id = "friend-email">
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" onclick="addFriend()">Add</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Expense Modal -->
+      <div id="expense-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">New Expense</h5>
+              <span class="close" data-dismiss="modal">&times;</span>
+            </div>
+            <div class="modal-body">
+              <div class="form-div">
+                <label for="" class = "col-md-5">Expense Description</label>
+                <textarea class = "col-md-7" name="name" rows="8" id = "description"></textarea>
+              </div>
+
+              <div class="form-div">
+                <label for="" class = "col-md-5">Paid by</label>
+                <select class="" name="" id = "paid-by"></select>
+              </div>
+
+              <div class="form-div">
+                <label for="" class = "col-md-5">Amount</label>
+                <input type="text" class = "col-md-7" name="" value="" id = "amount">
+              </div>
+              <div class="form-div">
+                <label for="" class = "col-md-6">Select Friends</label>
+                <ul id="select-list" class = "col-md-6">
+                </ul>
+              </div>
+              <div class="form-div">
+                  <div id="notice" class = "col-md-12"></div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <span class = "error"></span>
+              <button type="button" class="btn btn-default" data-dismiss="modal" onclick="updateDashboard(event)" id = "expense-button">Split</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+  <script src="scripts\services\storage-service.js" charset="utf-8" async></script>
+  <script src="scripts\controllers\expenses.js" charset="utf-8"></script>
+  <script src="scripts\controllers\friend-list.js" charset="utf-8" async></script>
+  <script src="scripts\controllers\app.js" charset="utf-8" async></script>
+</html>
