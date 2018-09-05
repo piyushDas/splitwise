@@ -1,0 +1,211 @@
+.container-fluid{
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+
+header.main-header{
+  line-height: 50px;
+  box-shadow: 0 0 5px #b9b9b9;
+  font-weight: 600;
+  background: #48be9d;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+}
+
+#friend-list > div:first-of-type{
+  background: #fff;
+  margin-top: 15px;
+  box-shadow: 0 0 5px #f3f3f3;
+  border: 1px solid #eee;
+  margin: 15px -5px;
+}
+
+
+#expenses > div:first-of-type{
+  background: #fff;
+  margin-top: 15px;
+  box-shadow: 0 0 5px #f3f3f3;
+  border: 1px solid #eee;
+  margin: 15px -5px 15px -15px;
+}
+
+.inline-action{
+  float: right;
+  color: #bfbfbf;
+  font-size: 12px;
+  margin: 5px;
+}
+
+.inline-action:hover{
+  color: #48be9d;
+  cursor: pointer;
+}
+
+#expenses button, #expense-modal button, #friend-modal button{
+  background: #5bc5a7;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    padding: 3px 15px;
+    border-radius: 0px;
+    float: right;
+    margin: 10px;
+    box-shadow: 0 0 5px #d0cece;
+}
+
+#expenses button:hover, #expense-modal button:hover, #friend-modal button:hover{
+  background: #c3f5e7;
+  color: #333;
+}
+
+.modal-header, .modal-footer{
+  padding: 5px 15px;
+}
+
+#expenses > div:first-of-type > div:first-of-type{
+  line-height: 40px;
+  padding: 0 15px;
+}
+
+input{
+  height: 25px;
+  border: none;
+  border: 1px solid #eee;
+  color:#a9a9a9;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+input:focus, textarea:focus{
+  border: 2px solid #ccc;
+}
+textarea{
+  height: 40px;
+  border: none;
+  resize: none;
+  border: 1px solid #eee;
+  color:#a9a9a9;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+*:focus{
+  outline: none!important;
+}
+
+.form-div{
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+li {
+      list-style: none;
+}
+
+li.selected{
+  background:#5bc5a7;
+  color: #fff;
+}
+
+.expense-item{
+  font-size: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  color: #aaa;
+}
+
+.expense-item > div:first-of-type{
+  font-size: 16px;
+  color: #333;
+}
+
+.metrics{
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+  box-shadow: 0 1px 5px #ddd;
+}
+
+.title{
+  font-size: 16px;
+  padding: 10px 15px;
+  font-weight: 600;
+}
+
+.friend-item{
+  font-size: 13px;
+  border-bottom:1px solid #eee;
+  padding: 7px 15px;
+}
+.balance{
+  float: right;
+  font-size: 12px;
+  font-weight: 600;
+  color: #48be9d;
+}
+
+#friends{
+  height: calc(100vh - 185px);
+  overflow: auto;
+}
+
+#expenses-container{
+  /* height: calc(100vh - 190px); */
+  overflow: auto;
+}
+@media only screen and (max-width: 768px)  {
+ #friends{
+   height: auto;
+ }
+
+ #expenses-container{
+   height:auto;
+ }
+
+ #expenses > div:first-of-type{
+   margin: 15px -5px;
+ }
+}
+select{
+  height: 25px;
+  border: none;
+  border: 1px solid #eee;
+  color: #a9a9a9;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.no-data{
+  text-align: center;
+    color: #bbb;
+    font-size: 14px;
+    padding: 10px 15px;
+    font-style: italic;
+}
+#select-list{
+  max-height: 200px;
+  overflow: auto
+}
+#select-list > li {
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+  padding: 7px 15px;
+}
+
+#select-list > li:hover{
+  box-shadow: 0 0 5px #bbbbbb85;
+}
+
+#search{
+  float: right;
+  margin: 10px;
+  /* background: url("search.png") top left     no-repeat; */
+}
+
+#friend-search{
+  width: 100%;
+}
